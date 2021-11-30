@@ -1,0 +1,29 @@
+{% extends "myvocaby/authLayout.html" %}
+{% load static %}
+{% block script %}
+  <script src="{% static 'myvocaby/login/script.js' %}" defer></script>
+{% endblock %}
+
+{% block body %}
+  <form action="/login" method="POST">
+    {% csrf_token %}
+    <div id="formUsername">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username">
+    </div>
+
+    <div id="formPassword">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+      {% if error  %}
+      <div class="error"> {{ error }} </div>
+      {% endif %}
+    </div>
+
+    <button type="submit" id="submit">Log in</button>
+  </form>
+
+  <div id="signup">
+    <p>Don't have an account?</p><a href="{% url 'signup' %}">Sign Up</a>
+  </div>
+{% endblock %}

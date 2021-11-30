@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Vocaby</title>
+  <link rel="stylesheet" href="{% static 'myvocaby/authLayout/style.css' %}">
+  <script src="{% static 'myvocaby/utils/util.js' %}" defer></script>
+  {% block script %}
+  {% endblock %}
+</head>
+<body>
+  <div id="content">
+    <h1>My Vocaby</h1>
+    <p>Learning words is easier than ever.</p>
+    <div class="container">
+      {% block body %}
+      {% endblock %}
+    </div>
+  </div> 
+</body>
+</html>

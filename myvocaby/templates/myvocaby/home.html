@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'myvocaby/home/style.css' %}">
+  <script src="{% static 'myvocaby/utils/util.js' %}" defer></script>
+  <script src="{% static 'myvocaby/home/script.js' %}" defer></script>
+  <title>My Vocaby</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <h2 id="logo">My Vocaby</h2>
+      <div id="quiz"><a href="/quiz" id="quizBtn">Quiz</a></div>
+      <div id="logout"><a href="/logout">Logout</a></div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="card addBtn" id="addCard">
+      <div id="add"></div>
+    </div>
+    {% if histories %}
+      {% for history in histories %}
+        <div class="card" data-cardid={{ history.word.id }}>
+          <div class="delete"></div>
+          <div class="vocab" id="word"><strong>{{ history.word.word }}</strong><span id="type">{{ history.word.type }}</span></div>
+          <div class="vocab" id="definition"> {{ history.word.definition }}</div>
+          <div class="vocab" id="example">{{ history.word.example }}</div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="background">
+    <div class="search-container">
+      <div class="adding-card">
+        <div class="close-container">
+          <div id="close">X</div>
+        </div>
+        <div class="search-field">
+          <input type="text" placeholder="Word" name="search" id="search">
+          <button id="searchBtn">Search</button>
+          <div id="searchLoading">Loading...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

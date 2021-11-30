@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  background-color: #e4e4e4;
+}
+h1 {
+  font-family: fantasy;
+  color: #1668ff;
+}
+#content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+input {
+  font-size: 16px;
+  width: 100%;
+  padding: 6px;
+  border: 1.5px solid #1668ff;
+}
+input:focus-visible {
+  outline-color: #1668ff;
+}
+.container {
+  margin-top: 40px;
+  width: 238px;
+}
+.container a {
+  margin-left: 10px;
+}
+.container div {
+  margin-bottom: 10px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin: 2px 0px;
+}
+button {
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+  margin: 10px 0px;
+  color: #fff;
+  background-color: #1668ff;
+}
+p {
+  color: #595959;
+}
+#signup,
+#login {
+  display: flex;
+  font-size: 16px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}

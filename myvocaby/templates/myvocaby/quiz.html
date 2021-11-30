@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'myvocaby/quiz/style.css' %}">
+  <script src="{% static 'myvocaby/utils/util.js' %}" defer></script>
+  <script src="{% static 'myvocaby/quiz/script.js' %}" defer></script>
+  <title>My Vocaby - Quiz</title>
+</head>
+<body>
+  <div class="close"><a class="close" href="/home">X</a></div>
+  <h1>Quiz</h1>
+  <div class="container">
+    <div id="quizOptions">
+      <label for="questionNumber">Select Number of Questions</label>
+      <select name="questionNumber" id="questionNumber">
+        <option value="5">5 Questions</option>
+        <option value="10">10 Questions</option>
+        <option value="15">15 Questions</option>
+      </select>
+      <span id="optionsInfo">You must have at least <strong>5 word cards.</strong></span>
+      <button type="button" id="startQuiz">Start Quiz</button>
+      <div class="loading">Loading...</div>
+    </div>
+  
+    <div id="quiz">
+      <div id="numbers">
+        <span id="current"></span><span> / </span><span id="total"></span>
+      </div>
+      
+      <div id="question"><strong id="questionBold"></strong></div>
+    
+      <div id="answers">
+        <div class="answer"></div>
+        
+        <div class="answer"></div>
+        
+        <div class="answer"></div>
+        
+        <div class="answer"></div>
+      </div>
+      
+      <div id="buttons" >
+        <button id="restart" type="button">Restart</button>
+        <button id="nextBtn" type="button">Next</button>
+      </div>
+    </div>
+
+    <div id="result">
+      <div id="numbers">
+        <span id="correct"></span><span> / </span><span id="wrong"></span>
+      </div>
+      <div id="resultText"></div>
+    </div>
+  </div> 
+</body>
+</html>
